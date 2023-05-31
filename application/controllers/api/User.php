@@ -1,18 +1,16 @@
 <?php
+use Restserver\Libraries\REST_Controller;
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 
 require APPPATH . 'libraries/REST_Controller.php';
 
-use Restserver\Libraries\REST_Controller;
-
-class Users extends REST_Controller {
+class User extends REST_Controller {
 
     function __construct($config = 'rest')
     {
         parent::__construct($config);
-        
-        $this->load->model('Users_model', 'model');
+
+        $this->load->model('User_model', 'model');
     }
 
     public function index_get()
@@ -28,7 +26,7 @@ class Users extends REST_Controller {
                     'status' => TRUE,
                     'code' => 200,
                     'message' => 'Here are all the users in the database.',
-                    'users'   => $users,
+                    'user'   => $users,
                 ], REST_Controller::HTTP_OK); 
             }
             else
@@ -119,6 +117,55 @@ class Users extends REST_Controller {
             ], REST_Controller::HTTP_NOT_FOUND); 
         }
     }
-}
 
-/* End of file Users.php and path \application\controllers\Users.php */
+    // public function edit_post()
+    // {
+    //     $id = (int) $this->post('id');
+    //     $name = $this->post('name');
+    //     $password = $this->post('password');
+
+    //     if ($id <= 0)
+    //     {
+    //         $this->response(NULL, REST_Controller::HTTP_BAD_REQUEST); 
+    //     }
+
+    //     if ($name != null && $password != null)
+    //     {
+    //         $this->model->update($id);
+    //     }
+    //     else
+    //     {
+    //         if ($password == null)
+    //         {
+    //             $this->model->updateName($id);
+    //         }
+    //         else if ($name == null)
+    //         {
+    //             $this->model->updatePass($id);
+    //         }
+    //     }
+
+    //     $this->set_response([
+    //         'id' => $id,
+    //         'message' => 'User edited successfully.'
+    //     ], REST_Controller::HTTP_OK); 
+    // }
+
+    // public function index_delete()
+    // {
+    //     $id = (int) $this->get('id');
+
+    //     if ($id <= 0)
+    //     {
+    //         $this->response(NULL, REST_Controller::HTTP_BAD_REQUEST); 
+    //     }
+
+    //     $this->model->delete($id)
+
+    //     $this->set_response([
+    //         'id' => $id,
+    //         'message' => 'User deleted successfully.'
+    //     ], REST_Controller::HTTP_NO_CONTENT); 
+    // }
+
+}

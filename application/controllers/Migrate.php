@@ -11,4 +11,4 @@ class Migrate extends CI_Controller{
     }
 }
 
-# http://localhost/ci-restserver-master/index.php/migrate/index/1
+# stellacrab.stellaris.site/index.php/migrate/index/1

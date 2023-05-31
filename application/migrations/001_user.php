@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Migration_Users extends CI_Migration
+class Migration_User extends CI_Migration
 {
-    protected $tableName  = 'users';
+    protected $tableName  = 'user';
 
     public function up()
     {

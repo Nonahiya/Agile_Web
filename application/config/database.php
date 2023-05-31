@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'cg',
+	'hostname' => 'pingit.jogjahost.com',
+	'username' => 'stellari_cg',
+	'password' => 'Stellacrab2023',
+	'database' => 'stellari_cg',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
